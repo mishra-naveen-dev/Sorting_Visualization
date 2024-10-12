@@ -45,13 +45,19 @@ class App extends Component {
           key={index}
           index={index}
           length={value}
-          color={this.state.colorKey[index]}
+          color={0}
         />
       );
     });
     return (
       <div className="App">
-        {bars}
+        <div className="frame">
+          <div className="barsDiv container card">
+            {bars}
+          </div>
+          <div className="control-pannel"></div>
+          <div className="pannel"></div>
+        </div>
       </div>
     );
   }
