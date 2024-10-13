@@ -1,21 +1,68 @@
 .App {
   text-align: center;
 }
+
 .frame {
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .container {
   margin: 5em 0;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 220px;
+  height: 250px;
+  /* overflow: hidden; */
 }
+
 .card {
   border-radius: 2em;
   padding: 0 1em;
-  background-color: #818181;
+  background-color: #070707;
+}
+
+/* Button styles */
+.controller {
+  background: #555;
+  margin: 0 1em;
+  border: 1px solid;
+  height: 3em;
+  width: 3em;
+  border-radius: 100%;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth hover transition */
+}
+
+/* Hover effect for buttons */
+.controller:hover {
+  background-color: #555;
+  color: white;
+  transform: scale(1.1);
+}
+
+.control-buttons {
+  height: 4em;
+  width: 15em;
+  background-color: #eee;
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+}
+
+.control-pannel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em; /* Add some space between the panel and content */
+}
+
+.panel {
 }

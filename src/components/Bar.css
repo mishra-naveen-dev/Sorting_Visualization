@@ -51,3 +51,28 @@
   height: 25px;
   outline: none;
 }
+.quantity-button {
+  text-align: center;
+  background: rgba(10, 255, 1, 0.2);
+  /* margin: 1px; */
+  margin-top: 1.5em;
+  margin-bottom: 4px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.quantity-button::hover {
+  opacity: 0.5;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield !important;
+}
