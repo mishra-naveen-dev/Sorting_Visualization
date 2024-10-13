@@ -19,7 +19,7 @@ class App extends Component {
     colorSteps: [], // stores the color changes during sorting
     currentStep: 0, // keeps track of the current step of the sorting process
     count: 10, // default number of elements
-    delay: 10, // delay between each step in milliseconds
+    delay: 500, // delay between each step in milliseconds
     algorithm: "Bubble Sort", // selected sorting algorithm
     timeouts: [], // stores timeouts for each step of the animation
     userCount: 10, // to store user input for the number of elements
@@ -36,9 +36,12 @@ class App extends Component {
 
   // Handle change of user input for the number of elements
   handleInputChange = (event) => {
-    this.setState({
-      userCount: parseInt(event.target.value) || 0, // handle non-numeric input gracefully
-    });
+    const value = parseInt(event.target.value);
+    if (!isNaN(value) && value > 0) {
+      this.setState({
+        userCount: value,
+      });
+    }
   };
 
   // Handle button click to start sorting based on user input
@@ -54,12 +57,14 @@ class App extends Component {
     let steps = this.state.arraSteps.slice();
     let colorSteps = this.state.colorSteps.slice();
 
-    // Use the selected algorithm to generate sorting steps
+    console.log("Current array before sorting:", array); // Debug log
     this.ALGORITHM[this.state.algorithm](array, 0, steps, colorSteps);
 
     this.setState({
       arraSteps: steps,
       colorSteps: colorSteps,
+    }, () => {
+      console.log("Generated sorting steps:", steps); // Debug log
     });
   };
 
@@ -108,7 +113,7 @@ class App extends Component {
 
   // Updates the array based on user input and regenerates steps
   changeArray = (index, value) => {
-    let arr = this.state.array;
+    let arr = this.state.array.slice();
     arr[index] = value;
     this.setState(
       {
@@ -127,9 +132,9 @@ class App extends Component {
     let currentStep = this.state.currentStep;
     if (currentStep === 0) return;
     currentStep -= 1;
-    this.setStep({
+    this.setState({
       currentStep: currentStep,
-      array: this.state.arraySteps[currentStep],
+      array: this.state.arraSteps[currentStep], // Change to arraSteps
       colorKey: this.state.colorSteps[currentStep]
     });
   };
@@ -137,11 +142,11 @@ class App extends Component {
   // Go to the next step of the sorting process
   nextStep = () => {
     let currentStep = this.state.currentStep;
-    if (currentStep >= this.state.arraySteps.length - 1) return;
+    if (currentStep >= this.state.arraSteps.length - 1) return; // Change to arraSteps
     currentStep += 1;
     this.setState({
       currentStep: currentStep,
-      array: this.state.arraySteps[currentStep],
+      array: this.state.arraSteps[currentStep], // Change to arraSteps
       colorKey: this.state.colorSteps[currentStep]
     });
   };
@@ -207,9 +212,9 @@ class App extends Component {
 
     return (
       <div className="App">
+        <div className="background-wave"></div> {/* Add the background wave */}
         <h1 className="heading">Sorting Visualization</h1>
         <div className="input-panel">
-
           <label>Number of Elements: </label>
           <input
             type="number"
