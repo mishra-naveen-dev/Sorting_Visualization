@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import './App.css';
+import "./App.css";
 import Bar from "./components/Bar";
 
 // Algorithms
-import BubbleSort from './algorithm/BS';
-
+import BubbleSort from "./algorithm/BS";
+import InsertionSort from "./algorithm/IS";
+import SelectionSort from "./algorithm/Selection";
 // Icons
-import Play from '@material-ui/icons/PlayCircleOutlineRounded';
-import Forward from '@material-ui/icons/SkipNextRounded';
-import Backward from '@material-ui/icons/SkipPreviousRounded';
-import RotateLeft from '@material-ui/icons/RotateLeft';
+import Play from "@material-ui/icons/PlayCircleOutlineRounded";
+import Forward from "@material-ui/icons/SkipNextRounded";
+import Backward from "@material-ui/icons/SkipPreviousRounded";
+import RotateLeft from "@material-ui/icons/RotateLeft";
 
 class App extends Component {
   state = {
@@ -20,14 +21,16 @@ class App extends Component {
     currentStep: 0, // keeps track of the current step of the sorting process
     count: 10, // default number of elements
     delay: 500, // delay between each step in milliseconds
-    algorithm: "Bubble Sort", // selected sorting algorithm
+    algorithm: "Selection Sort", // selected sorting algorithm
     timeouts: [], // stores timeouts for each step of the animation
     userCount: 10, // to store user input for the number of elements
   };
 
   ALGORITHM = {
-    'Bubble Sort': BubbleSort,
-  }
+    "Bubble Sort": BubbleSort,
+    "Insertion Sort": InsertionSort,
+    "Selection Sort": SelectionSort,
+  };
 
   // This method runs when the component is mounted
   componentDidMount() {
@@ -60,12 +63,15 @@ class App extends Component {
     console.log("Current array before sorting:", array); // Debug log
     this.ALGORITHM[this.state.algorithm](array, 0, steps, colorSteps);
 
-    this.setState({
-      arraSteps: steps,
-      colorSteps: colorSteps,
-    }, () => {
-      console.log("Generated sorting steps:", steps); // Debug log
-    });
+    this.setState(
+      {
+        arraSteps: steps,
+        colorSteps: colorSteps,
+      },
+      () => {
+        console.log("Generated sorting steps:", steps); // Debug log
+      }
+    );
   };
 
   // Clears all timeouts
@@ -135,7 +141,7 @@ class App extends Component {
     this.setState({
       currentStep: currentStep,
       array: this.state.arraSteps[currentStep], // Change to arraSteps
-      colorKey: this.state.colorSteps[currentStep]
+      colorKey: this.state.colorSteps[currentStep],
     });
   };
 
@@ -147,7 +153,7 @@ class App extends Component {
     this.setState({
       currentStep: currentStep,
       array: this.state.arraSteps[currentStep], // Change to arraSteps
-      colorKey: this.state.colorSteps[currentStep]
+      colorKey: this.state.colorSteps[currentStep],
     });
   };
 
@@ -220,15 +226,12 @@ class App extends Component {
             type="number"
             value={this.state.userCount}
             onChange={this.handleInputChange}
-            min="1"
+            min="0"
           />
           <button onClick={this.handleSortClick}>Generate & Sort</button>
         </div>
-
         <div className="frame">
-          <div className="barsDiv container card">
-            {bars}
-          </div>
+          <div className="barsDiv container card">{bars}</div>
         </div>
         <div className="control-panel">
           <div className="control-buttons">
