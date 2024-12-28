@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Bar from "./components/Bar";
+import Form from "./components/Form";
 
 // Algorithms
 import BubbleSort from "./algorithm/BS";
@@ -185,6 +186,11 @@ class App extends Component {
     // Store timeouts to be able to clear them later
     this.setState({ timeouts });
   };
+  //changespeed
+  changeSpeed = (e) => {
+    this.clearTimeouts();
+    this.setState({ delay: parseInt(e.target.value) });
+  };
 
   render() {
     // Create Bar components for each value in the array
@@ -244,7 +250,15 @@ class App extends Component {
             </button>
           </div>
         </div>
-        <div className="panel"></div>
+        <div className="panel">
+          <Form
+            formLabel="Speed"
+            values={[500, 400, 300, 200, 100]}
+            currentValue={this.state.delay}
+            lables={["1x", "2x", "3x", "4x", "5x"]}
+            onChange={this.changeSpeed}
+          />
+        </div>
       </div>
     );
   }
