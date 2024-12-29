@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sorting-visualzer/static/css/main.377b38d6.css",
-    "main.js": "/sorting-visualzer/static/js/main.f2400794.js",
-    "static/js/453.3b47ff9a.chunk.js": "/sorting-visualzer/static/js/453.3b47ff9a.chunk.js",
-    "static/media/img1.jpg": "/sorting-visualzer/static/media/img1.72dd075bb3ee490a51c1.jpg",
-    "index.html": "/sorting-visualzer/index.html",
-    "main.377b38d6.css.map": "/sorting-visualzer/static/css/main.377b38d6.css.map",
-    "main.f2400794.js.map": "/sorting-visualzer/static/js/main.f2400794.js.map",
-    "453.3b47ff9a.chunk.js.map": "/sorting-visualzer/static/js/453.3b47ff9a.chunk.js.map"
+    "main.css": "/mishra-naveen-dev/Sorting_Visualization/static/css/main.6299da4b.css",
+    "main.js": "/mishra-naveen-dev/Sorting_Visualization/static/js/main.42e056fc.js",
+    "static/js/453.3b47ff9a.chunk.js": "/mishra-naveen-dev/Sorting_Visualization/static/js/453.3b47ff9a.chunk.js",
+    "static/media/img1.jpg": "/mishra-naveen-dev/Sorting_Visualization/static/media/img1.72dd075bb3ee490a51c1.jpg",
+    "index.html": "/mishra-naveen-dev/Sorting_Visualization/index.html",
+    "main.6299da4b.css.map": "/mishra-naveen-dev/Sorting_Visualization/static/css/main.6299da4b.css.map",
+    "main.42e056fc.js.map": "/mishra-naveen-dev/Sorting_Visualization/static/js/main.42e056fc.js.map",
+    "453.3b47ff9a.chunk.js.map": "/mishra-naveen-dev/Sorting_Visualization/static/js/453.3b47ff9a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.377b38d6.css",
-    "static/js/main.f2400794.js"
+    "static/css/main.6299da4b.css",
+    "static/js/main.42e056fc.js"
   ]
 }
