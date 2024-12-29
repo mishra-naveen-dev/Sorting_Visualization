@@ -13,21 +13,22 @@ This project is an ongoing effort to create a visualization tool for various sor
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/sorting-visualization.git
-    ```
+   ```bash
+   git clone https://github.com/yourusername/sorting-visualization.git
+   ```
 2. Navigate to the project directory:
-    ```bash
-    cd sorting-visualization
-    ```
+   ```bash
+   cd sorting-visualization
+   ```
 3. Install the required dependencies:
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 ## Usage
 
 To start the visualization tool, run:
+
 ```bash
 npm start
 ```
@@ -44,4 +45,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or suggestions, please open an issue or contact the project maintainer at your.email@example.com.
+For any questions or suggestions, please open an issue or contact the project maintainer at mishra.naveen.dev@example.com.
